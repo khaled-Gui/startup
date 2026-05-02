@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import Hero from './hero';
-interface ReviewerData {
-  id: number
-  avatarUrl: string
-  fallback: string
-}
+
 
 
 
