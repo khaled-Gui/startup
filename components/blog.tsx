@@ -1,36 +1,29 @@
 
 "use client";
 
-import React, { useState } from "react";
-import {   ChevronRight } from "lucide-react";
+import React  from "react";
+
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
 
 import Link from "next/link";
 
 import {
-  LayoutDashboard,
-  FolderOpen,
-  DollarSign,
-  FileText,
-  Settings,
-  Bell,
-  Search,
-  Plus,
+  
   TrendingUp,
   Clock,
   CheckCircle2,
   AlertCircle,
   ChevronLeft,
-  X,
-  Upload,
-  ArrowUpRight,
+  
+  
+  
   Users,
   BarChart3,
-  Wallet,
-  Target
+  
+  
 } from "lucide-react";
 
 // ─── Types ─────────────────────────────────────────────
@@ -47,13 +40,7 @@ interface Project {
   image: string;
 }
 
-interface Notification {
-  id: string;
-  title: string;
-  message: string;
-  time: string;
-  read: boolean;
-}
+
 
 // ─── Mock Data ─────────────────────────────────────────
 const mockProjects: Project[] = [
@@ -107,11 +94,7 @@ const mockProjects: Project[] = [
   }
 ];
 
-const mockNotifications: Notification[] = [
-  { id: "1", title: "تمت الموافقة على مشروعك", message: "مشروع الطاقة الشمسية تمت الموافقة عليه من قبل لجنة التقييم", time: "منذ ساعتين", read: false },
-  { id: "2", title: "تمويل جديد", message: "تم استلام تمويل بقيمة 50,000 دج لمشروع تطبيق الذكاء الاصطناعي", time: "منذ 5 ساعات", read: false },
-  { id: "3", title: "تذكير", message: "يرجى إكمال المستندات المطلوبة لمشروع التعليم الإلكتروني", time: "منذ يوم", read: true }
-];
+
 
 // ─── Components ────────────────────────────────────────
 
@@ -139,62 +122,13 @@ const StatusBadge = ({ status }: { status: Project["status"] }) => {
   );
 };
 
-const StatCard = ({ icon: Icon, title, value, change, color }: any) => (
-  <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-    <div className="flex items-start justify-between">
-      <div>
-        <p className="text-slate-500 text-sm font-medium">{title}</p>
-        <h3 className="text-2xl font-bold text-slate-900 mt-2">{value}</h3>
-        {change && (
-          <p className={`text-sm mt-1 font-medium ${change.startsWith("+") ? "text-emerald-600" : "text-slate-400"}`}>
-            {change}
-          </p>
-        )}
-      </div>
-      <div className={`p-3 rounded-xl ${color}`}>
-        <Icon size={24} className="text-white" />
-      </div>
-    </div>
-  </div>
-);
+
 
 /*-----------*/
-const blogPosts = [
-  {
-    category: "Technology",
-    title: "A beginner's guide to blockchain for engineers",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    readTime: "5 min read",
-    image:
-      "https://cdn.pixabay.com/photo/2021/08/27/18/50/water-6579313_1280.jpg",
-  },
-  {
-    category: "Business",
-    title: "Understanding React Server Components",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    readTime: "8 min read",
-    image:
-      "https://cdn.pixabay.com/photo/2020/02/13/06/49/seascape-4844697_1280.jpg",
-  },
-  {
-    category: "Finance",
-    title: "10 Useful Shadcn UI Components You Should Know",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    readTime: "6 min read",
-    image:
-      "https://cdn.pixabay.com/photo/2021/08/13/12/51/sea-6543041_1280.jpg",
-  },
-  
-];
+
 
 const Blog = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const filteredProjects = mockProjects.filter(p =>
-    p.title.includes(searchQuery) || p.category.includes(searchQuery)
-  );
+ 
   return (
     
     <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-16 xl:px-64">
@@ -286,7 +220,7 @@ const Blog = () => {
           </Card>
         ))*/}
             <div className="flex items-center gap-2 mt-6">
-              {filteredProjects.map((project) => (
+              {mockProjects.map((project) => (
                              <div key={project.id} className="p-6 hover:bg-slate-50/50 transition-colors group">
                                <div className="flex flex-col lg:flex-col gap-6">
                                  {/* Image */}
