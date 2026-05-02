@@ -1,13 +1,11 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { Geist } from "next/font/google";
-import localFont from "next/font/local"
-import "./globals.css";
 
-const geistSans = Geist({
-  subsets: ["latin"],
-});
+import localFont from "next/font/local"
+
+
+
 const calSans = localFont({
   src: "./fonts/CairoPlay-VariableFont_slnt,wght.ttf",
   variable: "--font-cal-sans",
