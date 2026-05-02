@@ -1,4 +1,4 @@
-import { ChevronRight, Link } from "lucide-react";
+import {  Link } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
