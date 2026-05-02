@@ -45,10 +45,8 @@ export async function POST(req: Request) {
     });
 
     return response;
-process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 7 * 24 * 60 * 60, // 7 days
-  } catch (error) {
+    
+  } catch  {
     return NextResponse.json(
       { error: "Something went wrong" },
       { status: 500 }
