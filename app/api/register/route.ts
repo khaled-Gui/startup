@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-import bcrypt from "bcrypt";
-import { generateToken } from "@/lib/auth";
+//import { prisma } from "@/lib/prisma";
+//i/mport bcrypt from "bcrypt";
+///import { generateToken } from "@/lib/auth";
 
 
 export async function POST(req: Request) {
@@ -35,64 +35,31 @@ export async function POST(req: Request) {
     }
 
     // check user
-    const existingUser = await prisma.user.findUnique({
-      where: { email },
-    });
-
-    if (existingUser) {
-      return NextResponse.json(
-        { error: "Email already exists" },
-        { status: 400 }
-      );
-    }
+    
 
     // hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    
 
     // create user
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: hashedPassword,
-        role: "entrepreneur", // explicitly set default role
-      },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        role: true,
-        createdAt: true,
-      },
-    });
+    
 
     // Generate JWT token
-    const token = generateToken(user.id, user.email);
+    
 
     // Prepare user response (exclude password for security)
-    const userWithoutPassword = user;
+ 
 
 
     // Create response
-    const response = NextResponse.json(
-      { 
-        message: "User registered successfully", 
-        user: userWithoutPassword,
-        createdAt: user.createdAt
-      },
-      { status: 201 }
-    );
+    
 
     // Set token in cookie
-    response.cookies.set("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 7 * 24 * 60 * 60, // 7 days
-      path: "/",
-    });
 
-    return response;
+
+    return NextResponse.json(
+      { message: "User registered successfully" },
+      { status: 201 }
+    );
 
   } catch (error) {
     console.error("Registration error:", error);
