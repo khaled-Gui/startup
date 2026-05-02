@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Search, ShoppingCart, User, Menu, Star, Shield } from "lucide-react"
+import {  Star } from "lucide-react"
 
 import {
   Carousel,
