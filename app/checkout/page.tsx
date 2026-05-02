@@ -165,7 +165,7 @@ export default function CheckoutPage() {
             <h3 className="text-lg font-semibold mb-2">Thank you for your order!</h3>
             <p className="text-gray-600 mb-4">Order #TM-2024-001234</p>
             <p className="text-sm text-gray-600">
-              You'll receive an email confirmation shortly with tracking information.
+              You will receive an email confirmation shortly with tracking information.
             </p>
           </div>
         </CardContent>
