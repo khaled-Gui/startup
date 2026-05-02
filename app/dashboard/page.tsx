@@ -47,13 +47,7 @@ interface Notification {
   read: boolean;
 }
 
-interface StatCardProps {
-  icon: React.ComponentType<{ size: number; className: string }>;
-  title: string;
-  value: string | number;
-  change?: string;
-  color: string;
-}
+
 
 // ─── Mock Data ─────────────────────────────────────────
 const mockProjects: Project[] = [
