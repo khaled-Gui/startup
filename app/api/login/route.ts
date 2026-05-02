@@ -1,26 +1,18 @@
 import { NextResponse } from "next/server";
-import { prisma } from "../../../lib/prisma";
+//import { prisma } from "../../../lib/prisma";
 import bcrypt from "bcrypt";
-import { generateToken } from "@/lib/auth";
+
 
 export async function POST(req: Request) {
   try {
-    const { email, password } = await req.json();
+    const {  password } = await req.json();
 
     // check user
-    const user = await prisma.user.findUnique({
-      where: { email },
-    });
 
-    if (!user) {
-      return NextResponse.json(
-        { error: "Invalid credentials" },
-        { status: 400 }
-      );
-    }
+
 
     // check password
-    const isValid = await bcrypt.compare(password, user.password);
+    const isValid = await bcrypt.compare(password, password);
 
     if (!isValid) {
       return NextResponse.json(
@@ -30,22 +22,23 @@ export async function POST(req: Request) {
     }
 
     // create token
-    const token = generateToken(user.id, user.email);
 
     // send cookie
-    const response = NextResponse.json({
-      message: "Logged in successfully",
-      user: { id: user.id, email: user.email, name: user.name, role: user.role }
-    });
+ 
 
-    response.cookies.set("token", token, {
-      httpOnly: true,
-      secure: false,
-      path: "/",
-    });
+ 
 
-    return response;
-    
+    return NextResponse.json(
+      { message: "Logged in successfully" },
+      {
+        status: 200,
+        headers: {
+          "Set-Cookie": `token= HttpOnly; Path=/; Max-Age=3600; SameSite=Lax; ${
+            process.env.NODE_ENV === "production" ? "Secure;" : ""
+          }`,
+        },
+      }
+    );
   } catch  {
     return NextResponse.json(
       { error: "Something went wrong" },
