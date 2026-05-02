@@ -47,6 +47,14 @@ interface Notification {
   read: boolean;
 }
 
+interface StatCardProps {
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  title: string;
+  value: string | number;
+  change?: string;
+  color: string;
+}
+
 
 
 // ─── Mock Data ─────────────────────────────────────────
@@ -125,7 +133,7 @@ const StatusBadge = ({ status }: { status: Project["status"] }) => {
   return (
     <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium border ${styles[status]}`}>
       {status === "funded" && <CheckCircle2 size={14} />}
-      {status === "pending" && <Clock size={14} />}
+      {status === "pending" && <Clock size={14} />}StatCardProps
       {status === "approved" && <TrendingUp size={14} />}
       {status === "rejected" && <AlertCircle size={14} />}
       {labels[status]}
@@ -133,7 +141,7 @@ const StatusBadge = ({ status }: { status: Project["status"] }) => {
   );
 };
 
-const StatCard = ({ icon: Icon, title, value, change, color }: any) => (
+const StatCard = ({ icon: Icon, title, value, change, color }: StatCardProps) => (
   <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
     <div className="flex items-start justify-between">
       <div>
