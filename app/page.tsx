@@ -4,14 +4,11 @@ import Blog from "@/components/blog";
 import CarouselDemo from "@/components/carousel";
 import Courses from "@/components/courses";
 import CTABanner from "@/components/cta-banner";
-import FAQ from "@/components/faq";
-import Features from "@/components/features";
+
 import Footer from "@/components/footer";
 import Hero from "@/components/hero2";
 import { Navbar } from "@/components/navbar";
-import Pricing from "@/components/pricing";
-import Testimonials from "@/components/testimonials";
-import { useEffect } from "react";
+
 
  
 
