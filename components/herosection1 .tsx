@@ -1,7 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
-import { Star } from 'lucide-react'
+
+
 import Image from "next/image";
 import Hero from './hero';
 interface ReviewerData {
@@ -10,13 +8,7 @@ interface ReviewerData {
   fallback: string
 }
 
-const reviewers: ReviewerData[] = [
-  { id: 1, avatarUrl: 'https://notion-avatars.netlify.app/api/avatar?preset=male-1', fallback: 'U1' },
-  { id: 2, avatarUrl: 'https://notion-avatars.netlify.app/api/avatar?preset=female-1', fallback: 'U2' },
-  { id: 3, avatarUrl: 'https://notion-avatars.netlify.app/api/avatar?preset=male-2', fallback: 'U3' },
-  { id: 4, avatarUrl: 'https://notion-avatars.netlify.app/api/avatar?preset=female-2', fallback: 'U4' },
-  { id: 5, avatarUrl: 'https://notion-avatars.netlify.app/api/avatar?preset=male-3', fallback: 'U5' },
-]
+
 
 const HeroSection1 = () => {
   return (
