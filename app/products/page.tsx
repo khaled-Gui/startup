@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { Search, ShoppingCart, User, Menu, Star, Shield } from "lucide-react"
+import { Search, ShoppingCart, User, Menu, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Navbar } from "@/components/navbar"
+
 import { NavMenu } from "@/components/navbar/nav-menu"
 import { Logo } from "@/components/navbar/logo"
 
