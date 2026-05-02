@@ -21,7 +21,7 @@ const Navbar = () => {
             تسجيل الدخول
           </Button>
             </Link>
-            <Link href="/Signup" passHref>
+            <Link href="/register" passHref>
           <Button className="hidden xs:inline-flex">
             أنشيء حساب</Button>
           </Link>
