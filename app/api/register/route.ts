@@ -57,13 +57,21 @@ export async function POST(req: Request) {
         password: hashedPassword,
         role: "entrepreneur", // explicitly set default role
       },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        createdAt: true,
+      },
     });
 
     // Generate JWT token
     const token = generateToken(user.id, user.email);
 
     // Prepare user response (exclude password for security)
-    const { password: _, ...userWithoutPassword } = user;
+    const userWithoutPassword = user;
+
 
     // Create response
     const response = NextResponse.json(
