@@ -9,13 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 
-interface AiAnalysis {
-  authenticityScore: number;
-  sentimentScore: number;
-  helpfulnessScore: number;
-  overallTrustScore: number;
-  feedback: string;
-}
+
 
 const product = {
   name: "Wireless Bluetooth Headphones",
