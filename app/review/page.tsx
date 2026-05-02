@@ -9,9 +9,17 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 
+interface AiAnalysis {
+  authenticityScore: number;
+  sentimentScore: number;
+  helpfulnessScore: number;
+  overallTrustScore: number;
+  feedback: string;
+}
+
 const product = {
   name: "Wireless Bluetooth Headphones",
-  image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop",
+  image: "https://images.unsplash.com/photo-150AiAnalysis | null0420928-5e560c06d30e?w=100&h=100&fit=crop",
   seller: "TechGear Pro",
 }
 
