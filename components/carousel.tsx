@@ -249,7 +249,7 @@ export default function CarouselDemo() {
             </div>
 
             <Button className="sm:hidden" size="sm" variant="outline">
-              <Link href="https://www.fffuel.co/dddepth/">View all</Link>
+                <Link href="/products">المزيد...</Link>
             </Button>
           </div>
         </Carousel>
