@@ -26,20 +26,20 @@ export default function Home() {
     
     <Navbar /> 
       <main className="pt-16 xs:pt-20 sm:pt-24 ">
-         <div className="w-full lg:my-44 my-14  mx-auto">
-     
+        {/*  <div className="w-full lg:my-44 my-14  mx-auto">
+      </div>*/}
      <Hero />
-        </div>
+       
         
-        <div className="w-full bg-gray-100/50  dark:bg-gray-900/50  mx-auto">
-
+       {/* <div className="w-full bg-gray-100/50  dark:bg-gray-900/50  mx-auto">
+ </div>*/}
         <Courses />
-        </div>
+       
         <Blog />
-        <div className="w-full bg-gray-100/50  dark:bg-gray-900/50  mx-auto">
-
+       {/* <div className="w-full bg-gray-100/50  dark:bg-gray-900/50  mx-auto">
+ </div> */}
         <CarouselDemo />
-        </div>
+       
        {/* <Testimonials />*/}
         <CTABanner />
         <Footer />
